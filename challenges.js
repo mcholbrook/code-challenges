@@ -19,3 +19,31 @@ function twoSum(nums, target){
 }
 
 // twoSum([1, 2, 7, 10], 9)
+
+/* Longest Word
+Return the length of the longest word in the provided sentence.
+
+Your response should be a number.
+
+e.g.
+
+getLongestWord("over the garden wall.") // 6
+
+*/
+
+function getLongestWord(str){
+  let longestWord = 0
+  let count = 0
+  for(let i = 0; i < str.length; i++){
+    let char = str[i]
+    if (char === " " || i === str.length - 1){
+      if (count > longestWord) longestWord = count
+      count = 0
+      continue
+    } else {
+      count++
+    }
+  } return longestWord
+}
+
+// getLongestWord("over the gardennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn walllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll")

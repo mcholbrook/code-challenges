@@ -47,3 +47,25 @@ function getLongestWord(str){
 }
 
 // getLongestWord("over the gardennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn walllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll")
+
+/*Titleize a Sentence
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+*/
+
+function titleize(str){
+  newStr = str[0].toUpperCase()
+  let skipCount
+  for(let i = 0; i < str.length; i++){
+    let char = str[i]
+    if (char === " "){
+      newStr += " " + str[i + 1].toUpperCase()
+      skipCount = i + 1
+    } else if (i === 0 || i === skipCount){
+      continue
+    } else {
+      newStr += char
+    }
+  } return newStr
+}
+
+titleize("oh, potatoes and molasses!")
